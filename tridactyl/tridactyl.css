@@ -1,0 +1,147 @@
+/* Tridactyl - Catppuccin Mocha Theme */
+/* Font: JetBrains Mono | Style: Minimal & Clean */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --ctp-base:    #1e1e2e;
+  --ctp-mantle:  #181825;
+  --ctp-crust:   #11111b;
+  --ctp-surface0:#313244;
+  --ctp-surface1:#45475a;
+  --ctp-surface2:#585b70;
+  --ctp-overlay0:#6c7086;
+  --ctp-overlay1:#7f849c;
+  --ctp-text:    #cdd6f4;
+  --ctp-subtext0:#a6adc8;
+  --ctp-subtext1:#bac2de;
+  --ctp-lavender:#b4befe;
+  --ctp-blue:    #89b4fa;
+  --ctp-sapphire:#74c7ec;
+  --ctp-sky:     #89dceb;
+  --ctp-teal:    #94e2d5;
+  --ctp-green:   #a6e3a1;
+  --ctp-yellow:  #f9e2af;
+  --ctp-peach:   #fab387;
+  --ctp-mauve:   #cba6f7;
+  --ctp-red:     #f38ba8;
+  --ctp-pink:    #f5c2e7;
+}
+
+/* === Commandline Container === */
+#cmdline_container {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 2147483647;
+}
+
+/* === Input Line === */
+#tridactyl-input,
+.TridactylInput {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  background: var(--ctp-mantle) !important;
+  color: var(--ctp-text) !important;
+  border: none !important;
+  border-top: 1px solid var(--ctp-surface0) !important;
+  padding: 6px 12px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  outline: none !important;
+}
+
+/* === Completions === */
+.TridactylCompletion,
+#completions {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  background: var(--ctp-base) !important;
+  color: var(--ctp-text) !important;
+  border: none !important;
+  border-top: 1px solid var(--ctp-surface0) !important;
+  max-height: 30vh !important;
+  overflow-y: auto !important;
+}
+
+.TridactylCompletion tr {
+  padding: 3px 12px !important;
+  display: flex !important;
+}
+
+/* Selected completion item */
+.TridactylCompletion .focused,
+.TridactylCompletion tr:focus,
+.TridactylCompletion .selected {
+  background: var(--ctp-surface0) !important;
+  color: var(--ctp-lavender) !important;
+}
+
+/* Completion columns */
+.TridactylCompletion .prefix {
+  color: var(--ctp-mauve) !important;
+  min-width: 140px !important;
+}
+
+.TridactylCompletion .title {
+  color: var(--ctp-subtext1) !important;
+}
+
+.TridactylCompletion .url {
+  color: var(--ctp-overlay1) !important;
+}
+
+/* Section headers in completions */
+.TridactylCompletion thead tr {
+  background: var(--ctp-crust) !important;
+  color: var(--ctp-overlay0) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  padding: 4px 12px !important;
+}
+
+/* === Mode Indicator === */
+#mode-indicator,
+.TridactylStatusIndicator {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  background: var(--ctp-mantle) !important;
+  color: var(--ctp-mauve) !important;
+  border: none !important;
+  border-top: 1px solid var(--ctp-surface0) !important;
+  padding: 2px 10px !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  z-index: 2147483646 !important;
+}
+
+/* Mode colors */
+body[tridactyl-mode="insert"] #mode-indicator    { color: var(--ctp-green) !important; }
+body[tridactyl-mode="hint"] #mode-indicator      { color: var(--ctp-yellow) !important; }
+body[tridactyl-mode="visual"] #mode-indicator    { color: var(--ctp-sapphire) !important; }
+body[tridactyl-mode="ignore"] #mode-indicator    { color: var(--ctp-overlay0) !important; }
+body[tridactyl-mode="ex"] #mode-indicator        { color: var(--ctp-mauve) !important; }
+
+/* === Hints === */
+.TridactylHint {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  background: var(--ctp-yellow) !important;
+  color: var(--ctp-crust) !important;
+  border: none !important;
+  border-radius: 2px !important;
+  padding: 1px 4px !important;
+  opacity: 0.92 !important;
+}
+
+.TridactylHintActive {
+  background: var(--ctp-peach) !important;
+  color: var(--ctp-crust) !important;
+}
