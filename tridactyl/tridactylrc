@@ -212,3 +212,4 @@ blacklistadd /
 
 " === Load this config on browser start ===
 autocmd TriStart .* source_quiet ~/.config/tridactyl/tridactylrc
+colourscheme --url https://raw.githubusercontent.com/cschoelzel/dotfiles/master/tridactyl/tridactyl.css catppuccin
