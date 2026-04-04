@@ -1,0 +1,214 @@
+" ============================================================
+" Tridactyl Config
+" ============================================================
+
+" === Tab Navigation ===
+bind e tabnext
+bind q tabprev
+bind x tabclose
+bind <C-A-Left> tabprev
+bind <C-A-Right> tabnext
+
+" === Scrolling ===
+bind j scrollline 10
+bind k scrollline -10
+bind h scrollpx -50
+bind l scrollpx 50
+bind G scrollto 100
+bind gg scrollto 0
+bind <C-u> scrollpage -0.5
+bind <C-d> scrollpage 0.5
+bind <C-f> scrollpage 1
+bind <C-b> scrollpage -1
+bind $ scrollto 100 x
+bind ^ scrollto 0 x
+
+" === Navigation ===
+bind H back
+bind L forward
+bind <C-o> jumpprev
+bind <C-i> jumpnext
+bind gu urlparent
+bind gU urlroot
+bind ff urlroot
+bind r reload
+bind R reloadhard
+bind gh home
+bind gH home true
+
+" === URL / Commandline ===
+bind o fillcmdline open
+bind O current_url open
+bind w fillcmdline winopen
+bind W current_url winopen
+bind t fillcmdline tabopen
+bind T current_url tabopen
+bind s fillcmdline open search
+bind S fillcmdline tabopen search
+bind b fillcmdline tab
+bind B fillcmdline taball
+bind : fillcmdline_notrail
+bind i focusinput
+bind gi focusinput
+
+" === Clipboard / Yanking ===
+bind yy clipboard yank
+bind ys clipboard yankshort
+bind yc clipboard yankcanon
+bind ym clipboard yankmd
+bind yo clipboard yankorg
+bind yt clipboard yanktitle
+bind yq text2qr --timeout 5
+bind p clipboard open
+bind P clipboard tabopen
+
+" === Tabs ===
+bind J tabprev
+bind K tabnext
+bind gt tabnext_gt
+bind gT tabprev
+bind g^ tabfirst
+bind g0 tabfirst
+bind g$ tablast
+bind ga tabaudio
+bind << tabmove -1
+bind >> tabmove +1
+bind gx0 tabclosealltoleft
+bind gx$ tabclosealltoright
+bind u undo
+bind U undo window
+bind <A-p> pin
+bind <A-m> mute toggle
+
+" === Hints ===
+bind f hint
+bind F hint -b
+bind gF hint -qb
+bind ;i hint -i
+bind ;b hint -b
+bind ;o hint
+bind ;I hint -I
+bind ;k hint -k
+bind ;K hint -K
+bind ;y hint -y
+bind ;Y hint -cF img i => tri.excmds.yankimage(tri.urlutils.getAbsoluteURL(i.src))
+bind ;p hint -p
+bind ;h hint -h
+bind v hint -h
+bind ;P hint -P
+bind ;r hint -r
+bind ;s hint -s
+bind ;S hint -S
+bind ;a hint -a
+bind ;A hint -A
+bind ;; hint -; *
+bind ;# hint -#
+bind ;v hint -W mpvsafe
+bind ;V hint -V
+bind ;w hint -w
+bind ;t hint -W tabopen
+bind ;O hint -W fillcmdline_notrail open
+bind ;W hint -W fillcmdline_notrail winopen
+bind ;T hint -W fillcmdline_notrail tabopen
+bind ;d hint -W tabopen --discard
+bind ;gd hint -qW tabopen --discard
+bind ;z hint -z
+bind ;m hint -JFc img i => tri.excmds.open('https://lens.google.com/uploadbyurl?url='+i.src)
+bind ;M hint -JFc img i => tri.excmds.tabopen('https://lens.google.com/uploadbyurl?url='+i.src)
+bind ;x hint -F e => { const pos = tri.dom.getAbsoluteCentre(e); tri.excmds.exclaim_quiet("xdotool mousemove --sync " + window.devicePixelRatio * pos.x + " " + window.devicePixelRatio * pos.y + "; xdotool click 1")}
+bind ;c hint -F e => { const pos = tri.dom.getAbsoluteCentre(e); tri.excmds.exclaim_quiet("xdotool mousemove --sync " + window.devicePixelRatio * pos.x + " " + window.devicePixelRatio * pos.y + "; xdotool click 3")}
+bind ;: hint -F e => { const pos = tri.dom.getAbsoluteCentre(e); tri.excmds.exclaim_quiet("xdotool mousemove --sync " + window.devicePixelRatio * pos.x + " " + window.devicePixelRatio * pos.y)}
+bind ;X hint -F e => { const pos = tri.dom.getAbsoluteCentre(e); tri.excmds.exclaim_quiet("xdotool mousemove --sync " + window.devicePixelRatio * pos.x + " " + window.devicePixelRatio * pos.y + "; xdotool keydown ctrl+shift; xdotool click 1; xdotool keyup ctrl+shift")}
+
+" === Quickmarks / GitHub ===
+bind gnM tabopen https://github.com/
+bind goM open https://github.com/
+bind gwM winopen https://github.com/
+bind gpM winopen -private https://github.com/
+bind gng tabopen https://github.com/cschoelzel
+bind gog open https://github.com/cschoelzel
+bind gwg winopen https://github.com/cschoelzel
+bind gpg winopen -private https://github.com/cschoelzel
+
+" === Bookmarks ===
+bind a current_url bmark
+bind A bmark
+bind M gobble 1 quickmark
+bind m gobble 1 markadd
+bind ` gobble 1 markjump
+
+" === Misc ===
+bind . repeat
+bind gr reader --old
+bind gf viewsource
+bind g? rot13
+bind g! jumble
+bind g; changelistjump -1
+bind ZZ qall
+bind <F1> help
+bind ]] followpage next
+bind [[ followpage prev
+bind [c urlincrement -1
+bind ]c urlincrement 1
+bind <C-x> urlincrement -1
+bind <C-a> urlincrement 1
+bind <C-v> nmode ignore 1 mode normal
+
+" === Mode bindings ===
+bind <S-Insert> mode ignore
+bind <AC-Escape> mode ignore
+bind <AC-`> mode ignore
+bind <S-Escape> mode ignore
+bind <Escape> composite mode normal ; hidecmdline
+bind <C-[> composite mode normal ; hidecmdline
+
+" === Settings ===
+set smoothscroll true
+set scrollduration 70
+set hintchars hjklasdfgyuiopqwertnmzxcvb
+set hintfiltermode simple
+set hintnames short
+set hintuppercase true
+set hintdelay 300
+set hintautoselect true
+set hintshift false
+set tabopenpos next
+set tabclosepinned true
+set gimode nextinput
+set cursorpos end
+set jumpdelay 3000
+set markjumpnoisy true
+set allowautofocus true
+set modeindicator true
+set yankto clipboard
+set putfrom clipboard
+set historyresults 50
+set completionfuzziness 0.3
+set findcase smart
+set visualenterauto true
+set visualexitauto true
+
+" === Search Engines ===
+set searchengine google
+set searchurls.google https://www.google.com/search?udm=14&q=
+set searchurls.scholar https://scholar.google.com/scholar?q=
+set searchurls.bing https://www.bing.com/search?q=
+set searchurls.duckduckgo https://duckduckgo.com/?q=
+set searchurls.youtube https://www.youtube.com/results?search_query=
+
+" === Site-specific configs ===
+seturl www.google.com followpagepatterns.next Next
+seturl www.google.com followpagepatterns.prev Previous
+seturl www.google.com nmaps.gi composite focusinput -l ; text.end_of_line
+
+seturl ^https://web.whatsapp.com nmaps.f hint -c [tabindex]:not(.two)>div,a
+seturl ^https://web.whatsapp.com nmaps.F hint -bc [tabindex]:not(.two)>div,a
+
+seturl ^https://teams.microsoft.com modeindicator false
+seturl ^https://teams.live.com modeindicator false
+
+" === Blacklist ===
+blacklistadd /
+
+" === Load this config on browser start ===
+autocmd TriStart .* source_quiet ~/.config/tridactyl/tridactylrc
