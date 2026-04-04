@@ -1,63 +1,162 @@
 /* Tridactyl - Catppuccin Mocha Theme */
-/* Uses official --tridactyl-* CSS variables */
+/* Minimal, unten am Bildschirm, JetBrains Mono */
 
 :root {
-  /* Catppuccin Mocha palette */
-  --ctp-base:    #1e1e2e;
-  --ctp-mantle:  #181825;
-  --ctp-crust:   #11111b;
-  --ctp-surface0:#313244;
-  --ctp-surface1:#45475a;
-  --ctp-overlay0:#6c7086;
-  --ctp-text:    #cdd6f4;
-  --ctp-subtext1:#bac2de;
-  --ctp-lavender:#b4befe;
-  --ctp-sapphire:#74c7ec;
-  --ctp-yellow:  #f9e2af;
-  --ctp-peach:   #fab387;
-  --ctp-mauve:   #cba6f7;
-  --ctp-green:   #a6e3a1;
+    --rosewater: #f5e0dc;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --peach: #fab387;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --sapphire: #74c7ec;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --text: #cdd6f4;
+    --subtext1: #bac2de;
+    --overlay1: #7f849c;
+    --overlay0: #6c7086;
+    --surface1: #45475a;
+    --surface0: #313244;
+    --base: #1e1e2e;
+    --mantle: #181825;
+    --crust: #11111b;
 
-  /* === Tridactyl official variables === */
+    --font: "JetBrains Mono", monospace;
 
-  /* General */
-  --tridactyl-font-family: 'JetBrains Mono', monospace;
-  --tridactyl-font-size: 16px;
-  --tridactyl-fg: var(--ctp-text);
-  --tridactyl-bg: var(--ctp-base);
+    --tridactyl-fg: var(--text);
+    --tridactyl-bg: var(--base);
+    --tridactyl-url-fg: var(--sapphire);
+    --tridactyl-url-bg: var(--base);
+    --tridactyl-of-fg: var(--text);
+    --tridactyl-of-bg: var(--mantle);
+    --tridactyl-cmdl-fg: var(--text);
+    --tridactyl-cmdl-bg: var(--mantle);
+    --tridactyl-cmdl-font-family: var(--font);
+    --tridactyl-cmplt-font-family: var(--font);
+    --tridactyl-hintspan-font-family: var(--font);
+    --tridactyl-hintspan-fg: var(--crust) !important;
+    --tridactyl-hintspan-bg: var(--yellow) !important;
+    --tridactyl-hint-active-fg: none;
+    --tridactyl-hint-active-bg: none;
+    --tridactyl-hint-active-outline: none;
+    --tridactyl-hint-bg: none;
+    --tridactyl-hint-outline: none;
+    --tridactyl-border: 1px solid var(--surface1);
+    --tridactyl-completions-title: var(--blue);
+    --tridactyl-completions-title-focused: var(--lavender);
+    --tridactyl-completions-url: var(--sapphire);
+    --tridactyl-completions-header: var(--mauve);
+}
 
-  /* Commandline */
-  --tridactyl-cmdl-font-family: 'JetBrains Mono', monospace;
-  --tridactyl-cmdl-font-size: 16px;
-  --tridactyl-cmdl-fg: var(--ctp-text);
-  --tridactyl-cmdl-bg: var(--ctp-mantle);
+/* Commandline unten, volle Breite */
+#cmdline_iframe {
+    position: fixed !important;
+    bottom: 0 !important;
+    top: unset !important;
+    left: 0 !important;
+    width: 100% !important;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.4) !important;
+    z-index: 2147483647 !important;
+}
 
-  /* Completions */
-  --tridactyl-cmplt-font-size: 14px;
-  --tridactyl-cmplt-fg: var(--ctp-text);
-  --tridactyl-cmplt-bg: var(--ctp-base);
-  --tridactyl-cmplt-option-fg: var(--ctp-subtext1);
-  --tridactyl-url-fg: var(--ctp-sapphire);
+#command-line-holder {
+    border: none !important;
+    border-top: 1px solid var(--surface1) !important;
+    background: var(--mantle) !important;
+}
 
-  /* Selected completion */
-  --tridactyl-cmplt-selected-fg: var(--ctp-lavender);
-  --tridactyl-cmplt-selected-bg: var(--ctp-surface0);
+#command-line-holder #tridactyl-colon {
+    display: none;
+}
 
-  /* Status / mode indicator */
-  --tridactyl-status-font-family: 'JetBrains Mono', monospace;
-  --tridactyl-status-font-size: 12px;
-  --tridactyl-status-fg: var(--ctp-mauve);
-  --tridactyl-status-bg: var(--ctp-mantle);
+#tridactyl-input {
+    font-family: var(--font) !important;
+    font-size: 14px !important;
+    color: var(--text) !important;
+    background: var(--mantle) !important;
+    padding: 8px 14px !important;
+    width: 100% !important;
+    line-height: 1.5 !important;
+}
 
-  /* Hints */
-  --tridactyl-hint-font-family: 'JetBrains Mono', monospace;
-  --tridactyl-hint-font-size: 13px;
-  --tridactyl-hint-fg: #11111b;
-  --tridactyl-hint-bg: var(--ctp-yellow);
-  --tridactyl-hint-outline: none;
-  --tridactyl-hint-active-fg: #11111b;
-  --tridactyl-hint-active-bg: var(--ctp-peach);
+/* Completions */
+#completions {
+    color: var(--text);
+    background: var(--base);
+    font-family: var(--font);
+    font-size: 13px;
+    border-top: 1px solid var(--surface0);
+    overflow: hidden;
+    width: 100%;
+}
 
-  /* Border */
-  --tridactyl-border: 1px solid var(--ctp-surface1);
+#completions > div {
+    max-height: calc(15 * 1.6em);
+}
+
+#completions table {
+    font-size: 13px;
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
+#completions table tr td {
+    padding: 4px 14px;
+}
+
+#completions table tr td.prefix,
+#completions table tr td.privatewindow,
+#completions table tr td.container,
+#completions table tr td.icon {
+    display: none;
+}
+
+#completions table tr .title,
+#completions table tr td.excmd {
+    color: var(--tridactyl-completions-title);
+    padding-left: 14px;
+}
+
+#completions .sectionHeader {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--tridactyl-completions-header);
+    padding: 6px 14px !important;
+    border-bottom: none;
+    background: var(--crust);
+}
+
+#completions .focused {
+    background: var(--surface0);
+}
+
+#completions .focused td.title,
+#completions .focused td.excmd {
+    color: var(--tridactyl-completions-title-focused);
+}
+
+#completions .focused .url,
+#completions .focused td.documentation,
+#completions .focused td.content {
+    background: var(--surface0);
+    color: var(--tridactyl-completions-url);
+}
+
+/* Mode indicator */
+.TridactylStatusIndicator {
+    position: fixed !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    background: var(--mantle) !important;
+    color: var(--mauve) !important;
+    border: none !important;
+    border-top: 1px solid var(--surface1) !important;
+    border-left: 1px solid var(--surface1) !important;
+    font-family: var(--font) !important;
+    font-size: 11px !important;
+    padding: 3px 10px !important;
 }
