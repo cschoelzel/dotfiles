@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["@dietrichgebert/ponytail"],
+  "provider": {
+    "omniroute": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OmniRoute",
+      "options": {
+        "baseURL": "https://northeast-delete-position-views.trycloudflare.com/v1",
+        "apiKey": "dummy"
+      },
+      "whitelist": [
+        "auto/best-coding",
+        "auto/best-reasoning",
+        "auto/best-fast",
+        "auto/best-vision",
+        "auto/best-chat",
+        "auto/pro-coding",
+        "auto/pro-reasoning",
+        "auto/coding",
+        "auto/fast",
+        "auto/chat"
+      ]
+    }
+  }
+}
